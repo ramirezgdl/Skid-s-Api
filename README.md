@@ -32,7 +32,7 @@ skidApi:sendWebhook('Your WebhookURL', ...) -- You put your webhook's url there,
 
 skidApi.webhookJson = function(example)
 
--- return the webhook format(dictionarie) as you want
+-- return the webhook format(dictionary) as you want
 return {
     ['content'] = example
 }
