@@ -84,8 +84,22 @@ do
 
         httpPost = (Krnl and request) or (syn and syn.request) or http_request,
         
-        sendWebhook = function(webhooklink)
+        sendWebhook = function(webhooklink, ...)
             if self and webhooklink and self.httpPost and self.webhookJson then
+
+                if type(self.webhookJson) == "function" then
+                    return self.httpPost(
+                    {
+                        Url = webhooklink,
+                        Method = 'Post',
+                        Body = game:GetService('HttpService'):JSONDecode(self.webhookJson(...)) ,
+                        Headers = {
+                            ['Content-Type'] = 'application/json'
+                        }
+                    }
+                )
+                end
+
                 return self.httpPost(
                     {
                         Url = webhooklink,
