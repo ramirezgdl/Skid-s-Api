@@ -4,7 +4,7 @@
 
 _Skid's Api, is a library with all you need!_
 
-~~[Discord Server][https://discord.gg/q8FspVseAU]~~
+~~[Discord Server](https://discord.gg/q8FspVseAU)~~
 
 ## Features
 
