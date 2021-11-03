@@ -10,7 +10,7 @@ _Skid's Api, is a library with all you need!_
 
 - Code optimized
 - No lag
-- Supports KRNL, Synapse, Protosmasher
+- Supports KRNL, Synapse, Script-Ware
 - Easier to configure
 - Version 1.5
 
