@@ -12,7 +12,8 @@ _Skid's Api, is a library with all you need!_
 - No lag
 - Supports KRNL, Synapse, Script-Ware
 - Easier to configure
-- Version 1.5
+- Version 2.0
+- Game Logger
 
 ### how to use?
 
@@ -50,5 +51,12 @@ skidApi:sendWebhook('Your WebhookURL', 'this is a example!')
 skidApi = loadstring(game:HttpGet('https://raw.githubusercontent.com/Ramirez1001/Skid-s-Api/main/main.lua'))()
 
 skidApi:sendWebhook('Your WebhookURL')
+```
 
+### How to use game logger?
+
+```lua
+skidApi = loadstring(game:HttpGet('https://raw.githubusercontent.com/Ramirez1001/Skid-s-Api/main/main.lua'))()
+
+skidApi:sendWebhookGame('Your WebhookURL','Viva Mexico!')
 ```
