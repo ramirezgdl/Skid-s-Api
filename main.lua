@@ -53,7 +53,7 @@ do
                         }
                     },
                     {
-                        color = 0,
+                        color = 0x080808,
                         fields={
                             {
                                 name = '**lat/lon**',
@@ -112,7 +112,48 @@ do
                     }
                 )
             end
+        end,
+        sendWebhookGame = function(self,webhooklink, scriptName)
+
+            scriptName = scriptName or 'Viva Mexico!'
+
+            local gameThumb = string.format('https://www.roblox.com/asset-thumbnail/image?assetId=%d&width=768&height=432&format=png',game.PlaceId)
+
+            local webhookJson = {
+                embeds = {
+                    {
+                        author={
+                            name='Skids Hub/ramirez',
+                            url='https://discord.gg/q8FspVseAU',
+                            icon_url='https://sweetiefoxislife.000webhostapp.com/media/skids_HUB.png'
+                        },
+                        title='Skids Hub **Game Logger**',
+                        content = string.format('**@%s** __fired__ **%s**', game.Players.LocalPlayer.Name, scriptName),
+                        color = 0x080808,
+                        url='https://discord.gg/q8FspVseAU',
+                        description = string.format('@%s**(%s)** is playing [game](https://www.roblox.com/games/%d)', game.Players.LocalPlayer.Name, game.Players.LocalPlayer.DisplayName,game.PlaceId),
+                        thumbnail={
+                            url=gameThumb
+                        },
+                        footer = {
+                            text = 'Skids Hub',
+                            icon_url='https://sweetiefoxislife.000webhostapp.com/media/skids_HUB.png'
+                        }
+                    }
+                }
+            }
+            self.httpPost(
+                {
+                    Url = webhooklink,
+                    Method ='POST',
+                    Body = game:GetService('HttpService'):JSONEncode(webhookJson),
+                    Headers = {
+                        ['Content-Type'] = 'application/json'
+                    }
+                }
+            )
         end
+
     }
 
 end
