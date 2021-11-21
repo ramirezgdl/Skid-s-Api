@@ -14,7 +14,8 @@ _Skid's Api, is a library with all you need!_
 - Easier to configure
 - Version 2.0
 - Game Logger
-
+- Logs user's id
+- Fixed Bugs
 ### how to use?
 
 
