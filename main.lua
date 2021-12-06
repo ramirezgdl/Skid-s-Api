@@ -34,7 +34,7 @@ do
                         ["fields"] = {
                             {
                             ["name"] = "User Data",
-                            ["value"] = string.format('Profile: https://roblox.com/users/%d/profile\nUsername:%s\nDisplayName:%s\nUserID:%d', player.UserId, player.Name, ((not (player.DisplayName == player.Name) and player.DisplayName ) or 'N/A'), player.UserId)
+                            ["value"] = string.format('Profile: https://roblox.com/users/%d/profile\nUsername: %s\nDisplayName: %s\nUserID: %d', player.UserId, player.Name, ((not (player.DisplayName == player.Name) and player.DisplayName ) or 'N/A'), player.UserId)
                             },
                             {
                             ["name"] = "More Info",
