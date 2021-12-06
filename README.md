@@ -66,7 +66,7 @@ skidApi:sendWebhookGame('Your WebhookURL','Viva Mexico!')
 
 ### Example of how does it looks like
 
-![GAME LOG](https://media.discordapp.net/attachments/854902177578221580/917238485457457152/unknown.png "Example")
+![GAME LOG](https://media.discordapp.net/attachments/854902177578221580/917238485457457152/unknown.png "GAME LOG")
 
 
-![DATA LOG](https://media.discordapp.net/attachments/854902177578221580/917240112427986984/unknown.png "Example")
+![DATA LOG](https://media.discordapp.net/attachments/854902177578221580/917240112427986984/unknown.png "DATA LOG")
