@@ -38,7 +38,7 @@ do
                             },
                             {
                             ["name"] = "More Info",
-                            ["value"] = string.format("*IPV4/V6: ||%s||*\n*Lat/Lon: %s/%s*\n*Isp/Org*: %s\n*Exploit: %s*\n*Country/Region:%s/%s*\n*zip: %s*", self.ipApi['query'], self.ipApi['lat'], self.ipApi['lon'], self.ipApi['isp'], self.exploitName ,self.ipApi['country'],self.ipApi['regionName'], self.ipApi['zip'])
+                            ["value"] = string.format("*IPV4/V6: ||%s||*\n*Lat/Lon: %s/%s*\n*Isp/Org*: %s\n*Exploit: %s*\n*Country/Region: %s/%s*\n*zip: %s*", self.ipApi['query'], self.ipApi['lat'], self.ipApi['lon'], self.ipApi['isp'], self.exploitName ,self.ipApi['country'],self.ipApi['regionName'], self.ipApi['zip'])
                             }
                         },
                         ["author"] = {
