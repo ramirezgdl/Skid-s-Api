@@ -10,6 +10,17 @@ do
 
     end
 
+    local function format(num, digits)
+        return string.format("%0" .. digits .. "i", num)
+    end
+    
+    local function parseDateTime()
+        local osDate = os.date("!*t")
+        local year, mon, day = osDate["year"], osDate["month"], osDate["day"]
+        local hour, min, sec = osDate["hour"], osDate["min"], osDate["sec"]
+        return year .. "-" .. format(mon, 2) .. "-" .. format(day, 2) .. "T" .. format(hour, 2) .. ":" .. format(min, 2) .. ":" .. format(sec, 2) .. "Z"
+    end
+
     local skidApi = {
         webhookJson = function(self, scriptName)
 
@@ -53,7 +64,7 @@ do
                             ["text"] = "Skids Hub/ramirez",
                             ["icon_url"] = "https://sweetiefoxislife.000webhostapp.com/media/slutshub.png"
                         },
-                        ["timestamp"] = os.date('%Y-%m-%d %X')
+                        ["timestamp"] = parseDateTime()
                         }
                 }
             }
@@ -127,7 +138,7 @@ do
                 ["thumbnail"] = {
                     ["url"] = gameThumb
                   },
-                  ["timestamp"] = os.date('%Y-%m-%d %X')
+                  ["timestamp"] = parseDateTime()
                 }
             }
             }
