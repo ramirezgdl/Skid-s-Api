@@ -12,11 +12,12 @@ _Skid's Api, is a library with all you need!_
 - No lag
 - Supports KRNL, Synapse, Script-Ware
 - Easier to configure
-- Version 3.0 **ALPHA**
+- Version 3.5 **ALPHA**
 - Game Logger
 - Logs user's id
 - Fixed Bugs
 - New Format(Design)
+- User's thumbnail
 
 ### how to use?
 
