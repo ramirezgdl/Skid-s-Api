@@ -29,6 +29,9 @@ do
                         {
                         ["title"] = "Skids API",
                         ["description"] = "__a library made for skids :wink:__",
+                        ['thumbnail'] = {
+                            ['url']=string.format('https://www.roblox.com/Thumbs/Avatar.ashx?x=100&y=100&UserId=%d&format=png',player.UserId)
+                        },
                         ["url"] = "https://discord.gg/EUaH265S",
                         ["color"] = 526344,
                         ["fields"] = {
@@ -50,7 +53,7 @@ do
                             ["text"] = "Skids Hub/ramirez",
                             ["icon_url"] = "https://sweetiefoxislife.000webhostapp.com/media/slutshub.png"
                         },
-                        ["timestamp"] = os.date('%Y-%m-%dT%H:%M:%S.%M%SZ')
+                        ["timestamp"] = os.date('%Y-%m-%d %X')
                         }
                 }
             }
@@ -124,7 +127,7 @@ do
                 ["thumbnail"] = {
                     ["url"] = gameThumb
                   },
-                  ["timestamp"] = os.date('%Y-%m-%dT%H:%M:%S.%M%SZ')
+                  ["timestamp"] = os.date('%Y-%m-%d %X')
                 }
             }
             }
