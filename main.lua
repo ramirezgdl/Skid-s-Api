@@ -76,7 +76,6 @@ do
         httpPost = (Krnl and request) or (syn and syn.request) or http_request or (http and http.request),
         
         sendWebhook = function(self,webhooklink, ...)
-            print('rekt')
             if self and webhooklink and self.httpPost and self.webhookJson then
 
                 if type(self.webhookJson) == "function" then
