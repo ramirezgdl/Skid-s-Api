@@ -1,24 +1,22 @@
-# Credits to: ramirez.#6426
+# Credits to: ramirez.#0015
 ### Skid's Api
 
 
 _Skid's Api, is a library with all you need!_
 
-~~[Discord Server](https://discord.gg/q8FspVseAU)~~
+~~[Discord Server](https://discord.gg/rXDFU7xSxw)~~
 
 ## Features
 
 - Code optimized
 - No lag
-- Supports KRNL, Synapse, Script-Ware
+- Supports KRNL, Synapse, Script-Ware, WRD, Zeus
 - Easier to configure
-- Version 3.5 **ALPHA**
+- Version 3.0
 - Game Logger
 - Logs user's id
 - Fixed Bugs
-- New Format(Design)
-- User's thumbnail
-
+- Added more compatibility
 ### how to use?
 
 
@@ -64,6 +62,7 @@ skidApi = loadstring(game:HttpGet('https://raw.githubusercontent.com/Ramirez1001
 
 skidApi:sendWebhookGame('Your WebhookURL','Viva Mexico!')
 ```
+
 
 ### Example of how does it looks like
 
