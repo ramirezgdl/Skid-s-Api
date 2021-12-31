@@ -2,7 +2,7 @@ do
     -- This function returns a string with the name of the exploit u using(only checks for krnl, synapse, script ware)
     local function checkExploit()
         
-        local exploitName = (syn and 'Synapse') or (Krnl and 'Krnl') or ( identifyexecutor and identifyexecutor() ) or (getexecutorname and getexecutorname())
+        local exploitName = (syn and 'Synapse') or (Krnl and 'Krnl') or ( identifyexecutor and identifyexecutor() ) or (getexecutorname and getexecutorname()) or (ZEUS_LOADED and 'Zeus') or (WRD_LOADED and 'WRD')
 
         exploitName = exploitName or 'I don\'t fucking know'
 
@@ -58,11 +58,11 @@ do
                         ["author"] = {
                             ["name"] = "Skids Hub/ramirez",
                             ["url"] = "https://discord.gg/EUaH265S",
-                            ["icon_url"] = "https://media.discordapp.net/attachments/916806370001555536/923118375994003486/standard_1.gif"
+                            ["icon_url"] = "https://imgur.com/a/DxtKk9N"
                         },
                         ["footer"] = {
                             ["text"] = "Skids Hub/ramirez",
-                            ["icon_url"] = "https://media.discordapp.net/attachments/916806370001555536/923118375994003486/standard_1.gif"
+                            ["icon_url"] = "https://imgur.com/a/DxtKk9N"
                         },
                         ["timestamp"] = parseDateTime()
                         }
@@ -76,6 +76,7 @@ do
         httpPost = (Krnl and request) or (syn and syn.request) or http_request or (http and http.request),
         
         sendWebhook = function(self,webhooklink, ...)
+            print('rekt')
             if self and webhooklink and self.httpPost and self.webhookJson then
 
                 if type(self.webhookJson) == "function" then
@@ -128,11 +129,11 @@ do
                 ["author"] = {
                     ["name"] = "Skids Hub/ramirez",
                     ["url"] = "https://discord.gg/EUaH265S",
-                    ["icon_url"] = "https://media.discordapp.net/attachments/916806370001555536/923118375994003486/standard_1.gif"
+                    ["icon_url"] = "https://imgur.com/a/DxtKk9N"
                 },
                 ["footer"] = {
                     ["text"] = "Skids Hub/ramirez",
-                    ["icon_url"] = "https://media.discordapp.net/attachments/916806370001555536/923118375994003486/standard_1.gif"
+                    ["icon_url"] = "https://imgur.com/a/DxtKk9N"
                 },
                 ["thumbnail"] = {
                     ["url"] = gameThumb
