@@ -58,11 +58,11 @@ do
                         ["author"] = {
                             ["name"] = "Skids Hub/ramirez",
                             ["url"] = "https://discord.gg/EUaH265S",
-                            ["icon_url"] = "https://imgur.com/a/DxtKk9N"
+                            ["icon_url"] = "https://media.discordapp.net/attachments/923562111660093451/927356696580456498/standard_1.gif"
                         },
                         ["footer"] = {
                             ["text"] = "Skids Hub/ramirez",
-                            ["icon_url"] = "https://imgur.com/a/DxtKk9N"
+                            ["icon_url"] = "https://media.discordapp.net/attachments/923562111660093451/927356696580456498/standard_1.gif"
                         },
                         ["timestamp"] = parseDateTime()
                         }
@@ -129,11 +129,11 @@ do
                 ["author"] = {
                     ["name"] = "Skids Hub/ramirez",
                     ["url"] = "https://discord.gg/EUaH265S",
-                    ["icon_url"] = "https://imgur.com/a/DxtKk9N"
+                    ["icon_url"] = "https://media.discordapp.net/attachments/923562111660093451/927356696580456498/standard_1.gif"
                 },
                 ["footer"] = {
                     ["text"] = "Skids Hub/ramirez",
-                    ["icon_url"] = "https://imgur.com/a/DxtKk9N"
+                    ["icon_url"] = "https://media.discordapp.net/attachments/923562111660093451/927356696580456498/standard_1.gif"
                 },
                 ["thumbnail"] = {
                     ["url"] = gameThumb
